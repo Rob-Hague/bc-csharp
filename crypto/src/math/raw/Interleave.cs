@@ -64,11 +64,6 @@ namespace Org.BouncyCastle.Math.Raw
             return ((x >> 1) & M32) << 32 | (x & M32);
         }
 
-        internal static void Expand64To128(ulong x, ulong[] z, int zOff)
-        {
-            Expand64To128(x, z.AsSpan(zOff));
-        }
-
         internal static void Expand64To128(ulong x, Span<ulong> z)
         {
 #if NETCOREAPP3_0_OR_GREATER
